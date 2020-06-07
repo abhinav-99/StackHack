@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>To do Task App</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome JS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+	<style type="text/css">
+	 #navcolor
+	 {
+		background-color:#180754;
+	}
+	 .block
+      {
+        display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left:10px;
+  margin-top:5px;
+      }
+
+      .block i
+      {
+        position:absolute;
+        top:-7px;
+        left:13px;
+        color:black;
+        font-size: 40px;
+      }
+
+      #text
+      {
+        
+        font-weight: bolder;
+        font-size:50px;
+        color:white;
+      }
+      #semi
+      {
+        display:inline-flex;
+        position:relative;
+        height:40px;
+        margin:auto;
+        width:40px;
+        background-color:white;
+        border-radius: 0% 50% 50% 0%;
+      }
+
+      #button
+      {
+        height:40px;
+        
+        color:white;
+        background-color:#180754;;
+        font-weight: bolder;
+
+      }
+	 
+	 .btn1
+	 {
+		background-color:#180754;
+		border:3px solid white;
+		border-radius:10%;
+		font-size:20px;
+	}
+	
+	#heading
+	{
+		font-size:36px;
+		font-weight:900;
+		color:black;
+	}
+  #head
+  {
+    background-color:#180754 ;
+    color:white;
+    border:2px solid black;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 12px;
+  }
+	#head:hover
+	{
+		border-bottom:5px solid black;
+	}
+	.inputwithtask
+      {
+        position:relative;
+      }
+      .inputwithtask i
+      {
+        position:absolute;
+        top:10px;
+        float:right;
+        color:#200485;
+        font-size: 23px;
+      }
+
+		/* $turbo-yellow: #ffcc19;
+$turbo-yellow-10: lighten($turbo-yellow, 40%);
+$turbo-yellow-20: lighten($turbo-yellow, 30%);
+$turbo-yellow-30: lighten($turbo-yellow, 20%);
+$turbo-yellow-40: lighten($turbo-yellow, 10%);
+$turbo-yellow-50: lighten($turbo-yellow, 0%);
+$turbo-yellow-60: darken($turbo-yellow, 10%);
+$turbo-yellow-70: darken($turbo-yellow, 20%);
+$turbo-yellow-80: darken($turbo-yellow, 30%);
+$turbo-yellow-90: darken($turbo-yellow, 40%); */
+
+/* .bg-turbo-yellow {
+  background-color: $turbo-yellow;
+}
+
+.bg-turbo-yellow-10 {
+  background-color: $turbo-yellow-10;
+}
+.bg-turbo-yellow-20 {
+  background-color: $turbo-yellow-20;
+}
+.bg-turbo-yellow-30 {
+  background-color: $turbo-yellow-30;
+}
+.bg-turbo-yellow-40 {
+  background-color: $turbo-yellow-40;
+}
+.bg-turbo-yellow-50 {
+  background-color: $turbo-yellow-50;
+}
+.bg-turbo-yellow-60 {
+  background-color: $turbo-yellow-60;
+}
+.bg-turbo-yellow-70 {
+  background-color: $turbo-yellow-70;
+}
+.bg-turbo-yellow-80 {
+  background-color: $turbo-yellow-80;
+}
+.bg-turbo-yellow-90 {
+  background-color: $turbo-yellow-90;
+} */
+    
+    
+   @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+   
+   body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 10px 8px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+/* $lila : $turbo-yellow /*#7386D5*/;
+/* $lila-60 : $turbo-yellow-60 #6d7fcc; */
+/* $lila-line : $turbo-yellow-70 /*#47748b*/;
+
+/* $text-sidebar : #6b6b6b /*#fff*/;
+/* $text-sidebar-hover : #6b6b6b #fff*/; */ */ */
+
+.text-sidebar {
+  color: $text-sidebar;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background:white;
+    color: $text-sidebar;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background:$lila-60 /*#6d7fcc*/;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid $lila-line;
+}
+
+#sidebar ul p {
+    color: $text-sidebar;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+	font-weight:bold;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: $lila;
+    background: $text-sidebar-hover;
+}
+
+#sidebar ul li.active>a, a[aria-expanded="true"] {
+    color: $text-sidebar;
+    background: $lila-60;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position:absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: $lila-60;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+/* a.download {
+    background: $text-sidebar;
+    color: $lila;
+}
+
+a.article,
+a.article:hover {
+    background: $lila-60 !important;
+    color: $text-sidebar !important;
+} */
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+	margin:0 auto;
+  background-image: url("https://images.pexels.com/photos/4464918/pexels-photo-4464918.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1500")
+}
+
+#cover
+{
+	height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+	margin:0 auto;
+	padding:0 auto;
+    z-index: 6;
+}
+ .add{
+    width:70%;
+    color: #333333;
+	text-align:center;
+    margin: 0 auto;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    float: none;
+}
+
+#img
+{
+  height:200px;
+  width:200px;
+  margin-top:30px;
+  margin-left:23px;
+  border-radius:50%;
+  margin-bottom: 20px;
+}
+#date
+{
+  border: 2px solid black;
+  width:180px;
+  border-radius:10px;
+  background-color: #180754;
+  color:white;
+  padding-left: 4px;
+}
+
+#label,#prio
+{
+  border: 2px solid black;
+  border-radius:10px;
+}
+.daddd{
+  width:58%;
+    color: #333333;
+    margin: 0 auto;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    float: none;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.label {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.label .labeltext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.label:hover .labeltext {
+  visibility: visible;
+}
+a:active
+{
+  color:blue;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+	/* #content
+	{
+		position:absolute;
+	} */
+	.add
+	{
+        width:100%;
+	}
+  .add1
+	{
+        width:100%;
+	}
+	.block
+      {
+        display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left:10px;
+  margin-top:6px;
+      }
+      .block1
+      {
+        display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+      }
+
+      .block i
+      {
+        position:absolute;
+        top:-6px;
+        left:11px;
+        color:black;
+        font-size: 26px;
+      }
+
+      #text
+      {
+        margin-top:5px;
+        font-weight: bolder;
+        font-size:35px;
+        color:white;
+      }
+      #semi
+      {
+        display:inline-flex;
+        position:relative;
+        height:29px;
+        margin:auto;
+        width:29px;
+        background-color:white;
+        border-radius: 0% 50% 50% 0%;
+      }
+	  #btn
+	  {
+		font-size:15px;
+	   }
+	   #heading
+	{
+		font-size:30px;
+		font-weight:800;
+		color:black;
+	}
+	#head:hover
+	{
+		border-bottom:5px solid black;
+	}
+	.inputwithtask i
+      {
+       
+        left:300px;
+        
+      }
+    .daddd{
+      width:100%;
+    }
+
+}
+	</style>
+</head>
+
+<body>
+	 <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar" class="about wow fadeInUp ">
+            <div class="sidebar-header">
+                <h3>Dacor Sidebar</h3>
+            </div>
+            <img id="img" src="/users/image/<%=user._id%>"/>
+            <p style="margin-left:0px;color:black;font-weight:bold;text-align: center;">Welcome <%=user.name%>!!</p>
+            <ul class="list-unstyled components wow fadeInUp">
+                <li>
+                    <a class="t1" href="#"><i class="fa fa-spinner" aria-hidden="true"></i><span style="margin-left:15px;">In Progress</span></a>
+                </li>
+                <li>
+                    <a href="#" class="t2"><i class="fa fa-list" aria-hidden="true"></i><span style="margin-left:15px;">Completed</span></a>
+                </li>
+                
+                    
+                        <li>
+                            <a class="t3"href="#"><i class="fa fa-user" aria-hidden="true"></i><span style="margin-left:15px;">Personal</span></a>
+                        </li>
+                        <li>
+                            <a class="t4"href="#"><i class="fa fa-book" aria-hidden="true"></i><span style="margin-left:15px;">Work</span></a>
+                        </li>
+                        <li>
+                            <a class="t5" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span style="margin-left:15px;">Shopping</span></a>
+                        </li>
+						            <li>
+                            <a class="t6"href="#"><span style="margin-left:30px;">Others</span></a>
+                        </li>
+                        
+                    
+                
+                
+            </ul>
+
+            
+        </nav>
+
+        <!-- Page Content  -->
+		<nav class="navbar fixed-top navbar-expand-lg" id="navcolor">
+
+                    <button  type="button" id="sidebarCollapse" class="btn1 text-sidebar">
+                        <i style="color:white" class="fa fa-align-left"></i>
+                        <span></span>
+                    </button>
+					
+					<div class="block">
+            <span><div id="semi">
+              <i class="fa fa-check"></i>
+            </div></span><span><h1 id="text">o.tasksApp</h1></span>
+            </div>
+                    
+					
+                    
+                        <ul class="nav navbar-nav ml-auto">
+                            <li style="display:inline" class="nav-item active">
+                                <a class="nav-link" href="/settings"><span style="font-size:30px;color:white"><i class="fa fa-cog"></i></span></a>
+                            </li>
+                            
+                            
+                        </ul>
+					
+                
+            </nav>
+        <div id="content">
+
+            
+         
+			
+				  <div style="margin-top:140px;"class="container">
+					
+          <div id="Div1" class="row daddd">
+              <div class="col">
+              <p  style="color:#180754;font-weight:600;font-size: 20px;">In Progress</p>
+            <table>
+			
+              <tbody>
+              
+                 <%tasks1.forEach(function(row){%>
+                      <tr >
+                              <td >
+                                
+                                  <form action="/updatetasks/<%=row._id%>" method="POST">
+                                    <div style="background-color: white;border-bottom: 4px solid blue;margin-bottom: 13px;border-radius: 10px;" class="block1">
+                                        <i style="font-weight:bolder;font-size:20px;margin-right:10px"class="fa fa-circle-o" aria-hidden="true"></i> <span style="font-weight: bolder;font-size:16px;"><%=row.description%> <%=row.duedate%></span> 
+
+                                    <button style="margin-left:10px;border-radius:10px;border:2px solid black;color:white;background-color:#180754 ;" type="submit"> <i class="fa fa-check"></i></button>
+                                    </div>
+                                </form>
+                                
+                              </td>
+                       </tr>
+                      
+                 <% })%>
+
+              </tbody>
+                 
+                 
+              
+          </table>
+          </div>
+          </div>
+
+          <div id="Div2" class="row daddd">
+            <div class="col">
+            <p  style="color:#180754;font-weight:600;font-size: 20px;">Completed</p>
+            <table>
+			
+              <tbody>
+              
+                 <%tasks2.forEach(function(row){%>
+                  <tr >
+                    <td >
+                      <div style="background-color: white;border-bottom: 4px solid blue;margin-bottom: 13px;border-radius: 10px;" class="block1">
+                        <i style="font-weight:bolder;font-size:20px;margin-right:10px"class="fa fa-check-circle-o" aria-hidden="true"></i> <span style="font-weight: bolder;font-size:16px;"><%=row.description%></span> 
+        
+                      </div>
+                    </td>
+             </tr>
+                      
+                 <% })%>
+
+              </tbody>
+                 
+                 
+              
+          </table>
+          </div>
+          </div>
+          <div id="Div3" class="row daddd">
+            <div class="col">
+            <p style="color:#180754;font-weight:600;font-size: 20px;">Personal</p>
+          <table>
+    
+            <tbody>
+            
+               <%person.forEach(function(row){%>
+                    <tr >
+                            <td >
+                              
+                                <form action="/updatetasks/<%=row._id%>" method="POST">
+                                  <div style="background-color: white;border-bottom: 4px solid blue;margin-bottom: 13px;border-radius: 10px;" class="block1">
+                                      <i style="font-weight:bolder;font-size:20px;margin-right:10px"class="fa fa-circle-o" aria-hidden="true"></i> <span style="font-weight: bolder;font-size:16px;"><%=row.description%></span> 
+
+                                  <button style="margin-left:10px;border-radius:10px;border:2px solid black;color:white;background-color:#180754 ;" type="submit"> <i class="fa fa-check"></i></button>
+                                  </div>
+                              </form>
+                              
+                            </td>
+                     </tr>
+                    
+               <% })%>
+
+            </tbody>
+               
+               
+            
+        </table>
+        </div>
+        </div>
+
+        <div id="Div4" class="row daddd">
+          <div class="col">
+          <p  style="color:#180754;font-weight:600;font-size: 20px;">Work</p>
+        <table>
+  
+          <tbody>
+          
+             <%work.forEach(function(row){%>
+                  <tr >
+                          <td >
+                            
+                              <form action="/updatetasks/<%=row._id%>" method="POST">
+                                <div style="background-color: white;border-bottom: 4px solid blue;margin-bottom: 13px;border-radius: 10px;" class="block1">
+                                    <i style="font-weight:bolder;font-size:20px;margin-right:10px"class="fa fa-circle-o" aria-hidden="true"></i> <span style="font-weight: bolder;font-size:16px;"><%=row.description%></span> 
+
+                                <button style="margin-left:10px;border-radius:10px;border:2px solid black;color:white;background-color:#180754 ;" type="submit"> <i class="fa fa-check"></i></button>
+                                </div>
+                            </form>
+                            
+                          </td>
+                   </tr>
+                  
+             <% })%>
+
+          </tbody>
+             
+             
+          
+      </table>
+      </div>
+      </div>
+
+      <div id="Div5" class="row daddd">
+        <div class="col">
+        <p style="color:#180754;font-weight:600;font-size: 20px;">Shopping</p>
+      <table>
+
+        <tbody>
+          
+           <%shop.forEach(function(row){%>
+                <tr >
+                        <td >
+                          
+                            <form action="/updatetasks/<%=row._id%>" method="POST">
+                              <div style="background-color: white;border-bottom: 4px solid blue;margin-bottom: 13px;border-radius: 10px;" class="block1">
+                                  <i style="font-weight:bolder;font-size:20px;margin-right:10px"class="fa fa-circle-o" aria-hidden="true"></i> <span style="font-weight: bolder;font-size:16px;"><%=row.description%></span> 
+
+                              <button style="margin-left:10px;border-radius:10px;border:2px solid black;color:white;background-color:#180754 ;" type="submit"> <i class="fa fa-check"></i></button>
+                              </div>
+                          </form>
+                          
+                        </td>
+                 </tr>
+                
+           <% })%>
+
+        </tbody>
+           
+           
+        
+    </table>
+    </div>
+    </div>
+
+    <div id="Div6" class="row daddd">
+      <div class="col">
+      <p  style="color:#180754;font-weight:600;font-size: 20px;">Others</p>
+    <table>
+
+      <tbody>
+      
+         <%other.forEach(function(row){%>
+              <tr >
+                      <td >
+                        
+                          <form action="/updatetasks/<%=row._id%>" method="POST">
+                            <div style="background-color: white;border-bottom: 4px solid blue;margin-bottom: 13px;border-radius: 10px;" class="block1">
+                                <i style="font-weight:bolder;font-size:20px;margin-right:10px"class="fa fa-circle-o" aria-hidden="true"></i> <span style="font-weight: bolder;font-size:16px;"><%=row.description%></span> 
+
+                            <button style="margin-left:10px;border-radius:10px;border:2px solid black;color:white;background-color:#180754 ;" type="submit"> <i class="fa fa-check"></i></button>
+                            </div>
+                        </form>
+                        
+                      </td>
+               </tr>
+              
+         <% })%>
+
+      </tbody>
+         
+         
+      
+  </table>
+  </div>
+  </div>
+
+
+					<div class="row add" style="margin-top: 60px;margin-bottom:50px;">
+					  <div class="col-sm-10 form-group-lg">
+						<form action="/tasksadd" method="POST" class="justify-content-center">
+              <div class="form-group">
+                  <input type="text" name="task" class="form-control" id="task" placeholder="Add a new task" required></input>
+                  <br>
+                  <input name="duedate" id="date" type="date" required/>
+                  <button type="button" style="border:none;background: none;margin-left: 5px;" id="drop" data-toggle="tooltip" aria-haspopup="true" data-placement="bottom" title="Add Label">
+                    <i class="fa fa-tag" aria-hidden="true"></i>
+                  </button>
+                  <select name="label" id="label">
+                    <option >Personal</option>
+                    <option >Work</option>
+                    <option >Shopping</option>
+                    <option >Others</option>
+                  </select>
+                  <button type="button" style="border:none;background:none;" id="drop1" data-toggle="tooltip" data-placement="bottom" title="Add Priority">
+                    <i class="fa fa-flag" aria-hidden="true"></i>
+                  </button>
+                  <select name="prio" id="prio">
+                    <option  >Priority 1</option>
+                    <option>Priority 2</option>
+                    <option >Priority 3</option>
+                    <option >Priority 4</option>
+                  </select>
+                 
+              </div>
+                  <button id="button" type="submit" class="form-control">Add task</button>
+              
+						</form>
+						
+					  </div>
+					  
+					</div>
+				  </div>
+   
+
+            
+
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+//         function showVisible() {
+//     if (document.getElementById('Div1') !== undefined) {
+
+//         if (document.getElementById('Div1').style.display == 'block') {
+//             document.getElementById('Div1').style.display = 'none';
+//             document.getElementById('Div2').style.display = 'block';
+//         } else {
+//             document.getElementById('Div1').style.display = 'block';
+//             document.getElementById('Div2').style.display = 'none';
+//         }
+//     }
+// }
+$('#Div1, #Div2,#label,#prio,#Div3,#Div4,#Div5,#Div6').hide();
+$('.t1').click(function() {
+    $('#Div2').hide();
+    $('#Div3').hide();
+    $('#Div4').hide();
+    $('#Div5').hide();
+    $('#Div6').hide();
+    $('#Div1').show();
+});
+$('.t2').click(function() {
+    $('#Div1').hide();
+    $('#Div3').hide();
+    $('#Div4').hide();
+    $('#Div5').hide();
+    $('#Div6').hide();
+    $('#Div2').show();
+});
+$('.t3').click(function() {
+    $('#Div2').hide();
+    $('#Div1').hide();
+    $('#Div4').hide();
+    $('#Div5').hide();
+    $('#Div6').hide();
+    $('#Div3').show();
+});
+$('.t4').click(function() {
+    $('#Div2').hide();
+    $('#Div3').hide();
+    $('#Div1').hide();
+    $('#Div5').hide();
+    $('#Div6').hide();
+    $('#Div4').show();
+});
+$('.t5').click(function() {
+    $('#Div2').hide();
+    $('#Div3').hide();
+    $('#Div4').hide();
+    $('#Div1').hide();
+    $('#Div6').hide();
+    $('#Div5').show();
+});
+$('.t6').click(function() {
+    $('#Div2').hide();
+    $('#Div3').hide();
+    $('#Div4').hide();
+    $('#Div5').hide();
+    $('#Div1').hide();
+    $('#Div6').show();
+});
+$('#drop').click(function() {
+    
+    $('#label').show();
+});
+$('#drop1').click(function() {
+    
+    $('#prio').show();
+});
+      
+    </script>
+    <!-- <script src="frontpage.js"></script> -->
+    <!--Anime Js-->
+<script src="js/anime.min.js"></script>	
+<script type="text/javascript">
+
+	anime({
+  targets: '.logo',
+  translateX: [250,0],
+  backgroundColor: '#FFF',
+  duration: 1500,
+  easing:"spring"		
+  	
+});
+	anime({
+  targets: 'li .menuhover',
+  easing:"spring",	
+  translateX: anime.stagger(30),
+  delay: anime.stagger(200, {start: 800}) // delay starts at 800ms then increase by 100ms for each elements.
+});
+	
+	
+</script>	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+</body>
+
+</html>

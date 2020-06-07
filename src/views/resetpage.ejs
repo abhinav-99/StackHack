@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style type="text/css">
+      body
+      {
+        background-color: #180754;
+        margin:10% auto;
+        z-index: -10;
+      }
+      
+      .add{
+    width: 50%;
+    color: #333333;
+    margin: 0 auto;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    float: none;
+}
+
+.add1{
+    width:100%;
+    color: #333333;
+    margin: 0 auto;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    float: none;
+}
+      #cover {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    z-index: 6;
+}
+      .block
+      {
+        display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+      }
+      .block1
+      {
+        display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+      }
+
+
+      .block i
+      {
+        position:absolute;
+        top:-7px;
+        left:13px;
+        color:black;
+        font-size: 40px;
+      }
+
+      #text
+      {
+        
+        font-weight: bolder;
+        font-size:50px;
+        color:white;
+      }
+      #semi
+      {
+        display:inline-flex;
+        position:relative;
+        height:40px;
+        margin:auto;
+        width:40px;
+        background-color:white;
+        border-radius: 0% 50% 50% 0%;
+      }
+
+      #quote
+      {
+        color:white;
+        font-size: 30px;
+        font-weight:lighter;
+        margin-top:45px;
+      }
+      .inputwithemail
+      {
+        position:relative;
+        margin-left:auto;
+      }
+      .inputwithemail i
+      {
+        position:absolute;
+        top:10px;
+        left:4px;
+        color:#200485;
+      }
+      .inputwithpass
+      {
+        position:relative;
+      }
+      .inputwithpass i
+      {
+        position:absolute;
+        top:10px;
+        left:4px;
+        color:#200485;
+        font-size: 23px;
+      }
+
+
+      #Email
+      {
+        
+        height:40px;
+        padding-left:50px;
+        color:pink;
+      }
+      #password
+      {
+        
+        height:40px;
+        padding-left:50px;
+
+      }
+      #button
+      {
+        height:40px;
+        
+        color:blue;
+        background-color: wheat;
+        font-weight: bolder;
+
+      }
+      #forgot
+      {
+        color:white;
+        font-size: 24px;
+        font-weight:lighter;
+      }
+      @media screen and (max-width:800px)
+		{	
+			.add
+			{
+        width:100%;
+			}
+
+     
+      body
+      {
+        margin-left:1%;
+        margin-right:1%;
+      }
+			
+			
+		}
+    
+    </style>
+    <title>Forgot Password page</title>
+  </head>
+  <body>
+    <section id="cover">
+      <div class="container">
+        <div class="row add">
+          <div class="col-sm-10">
+            <div class="block">
+            <span><div id="semi">
+              <i class="fa fa-check"></i>
+            </div></span><span><h1 id="text">o.tasksApp</h1></span>
+            </div>
+            <p style="color:white;font-weight: bold;font-size:20px;margin-top:10px;">Forgot your password?</p>
+            <div class="block1">
+               
+                <span style="font-size: 30px;">&#128543;</span><span><p style="color:white;font-weight: bold;font-size:15px;margin-top:18px;">Well that's no fun.</p></span>
+            </div>
+            <p style="color:white;font-weight: bold;font-size:20px">Fill out your email address to reset your password.</p>
+          </div>
+        </div>
+       
+        
+        <div class="row add" style="margin-top: 20px;">
+          
+          <div class="col-sm-10 form-group-lg">
+            <form class="justify-content-center">
+              <div class="form-group inputwithemail">
+                <i class="fa fa-envelope icon"></i>
+                <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Email">
+              </div>
+              <p style="color:white">Back to login.</p>
+              <button id="button" type="submit" class="form-control">Reset Password</button>
+              
+            </form>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+    <!-- Modal -->
+
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-left:55px">Please enter your email address.</p>
+        <div class="row add1" style="margin-top: 20px;">
+          
+          <div class="col-sm-10 form-group-lg">
+            <form class="justify-content-center">
+              <div class="form-group inputwithemail">
+                <i class="fa fa-envelope icon"></i>
+                <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Email">
+              </div>
+              <p style="color:black">Back to login.</p>
+              <button id="button" type="submit" class="form-control">Reset Password</button>
+              
+            </form>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+      $("#forgot").click(function()
+		  {
+			  $("#modal1").modal('show'); 
+		  }
+		  );
+    </script>  
+  </body>
+</html>
